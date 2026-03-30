@@ -121,7 +121,7 @@ function Article({ activeFlag, customIngredients = [] }) {
         </div>
       )}
 
-      <div className="ingredient">
+      <div id="ingredients-section" className="ingredient">
         <div id="processCap">
           <div className="yellow-line-left"></div>
           <h5 className="recipe-instructions-title">Ingredients</h5>

@@ -20,7 +20,7 @@ function CustomPizzaModal({ onClose, onApply }) {
       cheddar: false,
       parmesan: false,
     });
-    
+
     const selectedIngredientNames = Object.entries(selectedIngredients)
     .filter(([, isSelected]) => isSelected)
     .map(([name]) => {
@@ -228,10 +228,17 @@ function CustomPizzaModal({ onClose, onApply }) {
         </div>
 
         <button
-        className="btn-addIngredients"
-        onClick={() => onApply(selectedIngredientNames)}
+            className="btn-addIngredients"
+            onClick={() => {
+                onApply(selectedIngredientNames);
+
+                requestAnimationFrame(() => {
+                const ingredientsSection = document.getElementById("ingredients-section");
+                ingredientsSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+                });
+            }}
         >
-        Add ingredients to your pizza
+            Add ingredients to your pizza
         </button>
 
         <button className="btn-resetModal" onClick={resetSelection}>
