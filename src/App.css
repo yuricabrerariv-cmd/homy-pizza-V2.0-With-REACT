@@ -1,0 +1,713 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+/* MY STYLES */
+:root {
+  --base-color:#1E1E1E;
+  --yellow:#FFAE00;
+  --light-yellow:#FFF5E4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--base-color);
+  font-family: "inter";
+}
+h1 {
+  color: var(--yellow);
+  font-size: 400;
+  font-weight: 900;
+}
+
+.logotype {
+  margin-top: 1.75rem;
+}
+
+nav {
+  display: flex;
+  gap: 4rem;
+  max-height: 24px;
+  margin-top: 3rem;
+}
+h2 {
+  color: var(--yellow);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+}
+h2:hover {
+  color: var(--light-yellow);
+  transition: .25s ease;
+}
+button {
+  border-radius: 24px;
+  background-color: var(--yellow);
+  border-style: none;
+  width: 128px;
+  height: 40px;
+}
+button:hover {
+  background-color: var(--light-yellow);
+  transition: .25s ease;
+  cursor: pointer;
+}
+
+.Language-selection {
+  display: flex;
+  gap: 0.5rem;
+}
+.language-flags {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+header {
+  display: flex;
+  gap: 4rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  justify-content:space-between;
+}
+
+h3 {
+  color: var(--yellow);
+  font-size: 8rem;
+  font-style: normal;
+  font-weight: 900;
+}
+h4 {
+  color: var(--yellow);
+}
+
+.hero {
+  display: flex;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  justify-content: space-evenly;
+}
+.slogan {
+  margin-top: 6rem;
+}
+
+#ppimg{
+  max-width: 50%;
+  max-height: 50%;
+  filter: drop-shadow(-1rem 1rem 1rem);
+  z-index: -10;
+ }
+
+article {
+  background-color: var(--light-yellow);
+  border-radius: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 4rem;
+  z-index: -1;
+  margin-top: -17rem;
+}
+
+section{
+  z-index: 10;
+}
+.Country_Flags {
+  display:flex;
+  gap: 1.5rem;
+  margin-top: -5rem;
+  margin: -4rem 3rem 0 3rem;
+  justify-content: center;
+}
+.Country_Flags div {
+  /* background-color: aqua; */
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.flag-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  height: 339px;
+  cursor: pointer;
+}
+.flag-card.active .overlayIT {
+  opacity: 1;
+}
+.overlayIT{
+  position: absolute;
+  inset: -11rem 0; /*is a cleaner version of top/right/bottom/left: 0*/
+  z-index: 2;
+  height: 169px;
+  width: 367px;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: var(--yellow);
+
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 0 1rem;
+}
+.flag-title {
+  margin: 0;
+  font-size: 3rem;
+  color: var(--light-yellow);
+}
+.overlayIT p {
+  margin: 0;
+  color: var(--light-yellow);
+}
+.Country_Flags div:hover .overlayIT {
+  opacity: 1;
+  top: -11rem;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.history {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+.story {
+  display: flex;
+  background-color: var(--yellow);
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border-radius: 1.5rem;
+}
+.yellow-arrow {
+  /* background-color: aqua; */
+  z-index: 10;
+  padding-top: 18rem;
+}
+.arrow {
+  /* margin-left: 72%; */
+  transform: translateX(-100px);
+  transition: transform 0.3s ease;
+}
+.yellow-arrow--italy .arrow {
+  transform: translateX(420px);
+}
+
+.yellow-arrow--usa .arrow {
+  transform: translateX(810px);
+}
+
+.yellow-arrow--cuba .arrow {
+  transform: translateX(1200px);
+}
+
+.welcomingFrase {
+  color: var(--yellow);
+  text-align: center;
+  font-size: 3rem;
+}
+.welcomingIllustration {
+  display: flexbox;
+  justify-items: center;
+  padding-top: 20rem;
+  padding-bottom: 8rem;
+}
+
+.story_paragraph {
+  /* background-color: red; */
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: white;
+}
+h6 {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  color: white;
+  margin-bottom: 0;
+  margin-top: 2rem;
+}
+.pizza-cubana {
+  margin-top: 4rem;
+  width: 50%;
+  height: 30%;
+}
+
+.ingrediens-instructions {
+  display: flex;
+  justify-content: space-between;
+}
+.recipe-instructions {
+  display: flex;
+  justify-content: space-between;
+}
+.illustration-capsule {
+  width: 8rem;
+  height: 8rem;
+  margin-bottom: 2rem;
+}
+.instruction-1, .instruction-2, .instruction-3 {
+  justify-items: center;
+  width: 32rem;
+  margin: 0 4rem 8rem;
+}
+.ingredients-C1, .ingredients-C2, .ingredients-C3 {
+  justify-items: center;
+  width: 32rem;
+  margin: 0 4rem 4rem;
+}
+h5.recipe-instructions-title {
+  /* background-color: aqua; */
+  color: var(--yellow);
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  width: 64rem;
+}
+.yellow-line-left {
+  background-color: var(--yellow);
+  height: 4px;
+  width: 100%;
+  margin-right: 2rem;
+}
+.yellow-line-right {
+  background-color: var(--yellow);
+  height: 4px;
+  width: 100%;
+  margin-left: 2rem;
+}
+#processCap {
+  display: flex;
+  margin: 0 4rem 0;
+  align-items: center;
+}
+
+/* FOOTER */
+footer {
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Custom Pizza Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.modal-frame {
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  border: 1px solid var(--yellow);
+  background: var(--base-color);
+  padding: 2rem;
+  position: relative;
+  z-index: 1001;
+  flex-direction: column;
+  gap: 1rem;
+}
+.modal-content {
+  display: flex;
+  width: 441px;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  flex-shrink: 0;
+}
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 30, 30, 75%);
+  backdrop-filter: blur(8px);
+}
+.modalTitle {
+  color: var(--yellow);
+  text-align: center;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+
+  margin: 1rem;
+  height: 39px;
+  align-self: stretch;
+}
+
+.tabs {
+  display: flex;
+justify-content: space-between;
+}
+.tabs button.active-tab {
+  background: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.tabs button.active-tab h2 {
+  color: var(--base-color);
+}
+
+.sh-Tab1,
+.sh-Tab2,
+.sh-Tab3 {
+  border-radius: 24px 24px 0 0;
+  border: 1px solid var(--yellow);
+  background: var(--base-color);
+  display: flex;
+  width: 9.25rem;
+  height: 2rem;
+  padding: 1rem 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.tab1Title,
+.tab2Title,
+.tab3Title {
+  color: var(--yellow);
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+
+.sh-Tab1{
+  border-radius: 24px 24px 0 0;
+  background: var(--base-color);
+  border: 1px solid var(--yellow);
+
+  display: flex;
+  width: 9.25rem;
+  height: 2rem;
+  padding: 1rem 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.sh-Tab1:hover {
+  border-radius: 24px 24px 0 0;
+  background: var(--base-color);
+  border: 1px solid var(--yellow);
+}
+.tab1Title{
+  color: var(--yellow);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 0.5rem;
+}
+
+.sh-Tab2{
+  border-radius: 24px 24px 0 0;
+  background: var(--base-color);
+  border: 1px solid var(--yellow);
+
+  display: flex;
+  width: 9.25rem;
+  height: 2rem;
+  padding: 1rem 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.sh-Tab2:hover {
+  border-radius: 24px 24px 0 0;
+  background: var(--base-color);
+  border: 1px solid var(--yellow);
+}
+.tab2Title{
+  color: var(--yellow);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 0.5rem;
+}
+
+.sh-Tab3{
+  border-radius: 24px 24px 0 0;
+  border: 1px solid var(--yellow);
+  background: var(--base-color);
+
+  display: flex;
+  width: 9.25rem;
+  height: 2rem;
+  padding: 1rem 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.sh-Tab3:hover {
+  border-radius: 24px 24px 0 0;
+  border: 1px solid var(--yellow);
+  background: var(--base-color);
+  
+}
+.tab3Title{
+  color: var(--yellow);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 0.5rem;
+}
+
+.sh-Square {
+  display: flex;
+  padding: 1rem 22px 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  align-self: stretch;
+
+  border-radius: 0 0 32px 32px;
+  background: #FFAE00;
+}
+.v-Square {
+  display: flex;
+  padding: 1rem 22px 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  align-self: stretch;
+
+  border-radius: 0 0 32px 32px;
+  background: #FFAE00;
+}
+.ch-Square {
+  display: flex;
+  padding: 1rem 22px 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  align-self: stretch;
+
+  border-radius: 0 0 32px 32px;
+  background: #FFAE00;
+}
+.sentence {
+  color: var(--light-yellow);
+  text-align: center;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  margin: 1rem 2rem 0 2rem;
+  text-wrap:unset;
+}
+
+button.btn-addIngredients {
+  width: 320px;
+  height: 3rem;
+  padding: 10px;
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+button.btn-resetModal {
+  border: 1px solid var(--yellow);
+  background-color: var(--base-color);
+  color: var(--yellow);
+  width: 320px;
+  height: 3rem;
+  padding: 10px;
+  
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+button.btn-resetModal:hover {
+  color: var(--base-color);
+  background-color: var(--light-yellow);
+}
+button.btn-closeModal {
+  /* border: 1px solid var(--yellow); */
+  background-color: var(--base-color);
+  color: var(--yellow);
+  width: 320px;
+  height: 3rem;
+  padding: 10px;
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+button.btn-closeModal:hover {
+  color: var(--base-color);
+  background-color: var(--light-yellow);
+}
+
+.sh-ingredients {
+  display: flex;
+  width: 397px;
+  padding: 1rem 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.sh-ingredient-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+.ingredient-title {
+  color: var(--light-yellow);
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+button.add-btn {
+  border-radius: 1.5rem;
+  border: 1px solid var(--light-yellow);
+
+  color: var(--light-yellow);
+  display: flex;
+  height: 3rem;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+button.add-btn:hover {
+  background-color: var(--yellow);
+  border: 2px solid var(--light-yellow);
+  transition: 0.25s ease;
+}
+button.remove-btn {
+  border-radius: 1.5rem;
+  border: 1px solid var(--base-color);
+
+  color: var(--base-color);
+  display: flex;
+  height: 3rem;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+button.remove-btn:hover {
+  background-color: var(--yellow);
+  border: 2px solid var(--base-color);
+  transition: 0.25s ease;
+}
+
+.custom-pizza-title-wrap {
+  padding-top: 20rem;
+}
+h6.yourCPizza {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  color: var(--yellow);
+}
