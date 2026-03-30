@@ -91,7 +91,7 @@ body {
 }
 h1 {
   color: var(--yellow);
-  font-size: 400;
+  font-size: 2rem;
   font-weight: 900;
 }
 
