@@ -1,25 +1,14 @@
 import { useState } from 'react';
 import AddRemoveButton from './add-remove-btn';
 
-function CustomPizzaModal({ onClose, onApply }) {
-  const [activeTab, setActiveTab] = useState("sh");
+function CustomPizzaModal({
+                            onClose,
+                            onApply,
+                            selectedIngredients = {},
+                            setSelectedIngredients,
+                            }) {
 
-  
-  
-  const [selectedIngredients, setSelectedIngredients] = useState({
-      salamy: false,
-      pepperony: false,
-      serranoHam: false,
-      prosciuttoHam: false,
-      bellPeppers: false,
-      spinach: false,
-      onion: false,
-      mushrooms: false,
-      manchego: false,
-      mozzarella: false,
-      cheddar: false,
-      parmesan: false,
-    });
+  const [activeTab, setActiveTab] = useState("sh");
 
     const selectedIngredientNames = Object.entries(selectedIngredients)
     .filter(([, isSelected]) => isSelected)

@@ -2,7 +2,13 @@ import { useState } from "react";
 import usaFlag from "./assets/Icons/Icon-Flag_of_the_United_States.svg";
 import CustomPizzaModal from "./Modal";
 
-function NavBar({ setActiveFlag, setCustomIngredients }) {
+function NavBar({
+                  setActiveFlag,
+                  setCustomIngredients,
+                  selectedIngredients,
+                  setSelectedIngredients,
+                }) {
+
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
@@ -47,6 +53,8 @@ function NavBar({ setActiveFlag, setCustomIngredients }) {
             setActiveFlag("custom");
             setModal(false);
           }}
+          selectedIngredients={selectedIngredients}
+          setSelectedIngredients={setSelectedIngredients}
         />
       )}
 

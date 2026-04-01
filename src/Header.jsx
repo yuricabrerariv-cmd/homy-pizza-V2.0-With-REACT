@@ -1,6 +1,11 @@
 import NavBar from "./NavBar";
 
-function Header({ setActiveFlag, setCustomIngredients }) {
+function Header({
+                  setActiveFlag,
+                  setCustomIngredients,
+                  selectedIngredients,
+                  setSelectedIngredients,
+                }) {
   return (
     <header>
       <div className="logotype">
@@ -9,9 +14,12 @@ function Header({ setActiveFlag, setCustomIngredients }) {
       <NavBar
         setActiveFlag={setActiveFlag}
         setCustomIngredients={setCustomIngredients}
+        selectedIngredients={selectedIngredients}
+        setSelectedIngredients={setSelectedIngredients}
       />
     </header>
   );
 }
+
 
 export default Header;
