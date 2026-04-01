@@ -75,6 +75,7 @@ textarea:not([rows]) {
 
 
 /* MY STYLES */
+
 :root {
   --base-color:#1E1E1E;
   --yellow:#FFAE00;
@@ -102,7 +103,7 @@ h1 {
 nav {
   display: flex;
   gap: 4rem;
-  max-height: 24px;
+  max-height: 4rem;
   margin-top: 3rem;
 }
 h2 {
@@ -188,7 +189,7 @@ section{
 .Country_Flags {
   display:flex;
   gap: 1.5rem;
-  margin-top: -5rem;
+  /* margin-top: -5rem; */
   margin: -4rem 3rem 0 3rem;
   justify-content: center;
 }
@@ -710,4 +711,221 @@ h6.yourCPizza {
   line-height: normal;
   text-align: center;
   color: var(--yellow);
+}
+
+/* Responsivness */
+
+@media (max-width: 600px) {
+  header {
+    gap: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    justify-content:space-between;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  nav {
+    gap: 1rem;
+  }
+  h2 {
+    display: none;
+    font-size: 0.75rem;
+  }
+  button.btn-openCPizzaModal {
+    font-size: 0.75rem;
+    width: 128px;
+    /* margin-top: 0.5rem; */
+  }
+  .Language-selection {display: none;}
+  
+  .hero {
+    display: block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-items: center;
+  }
+  .slogan {
+    margin-top: 0;
+    z-index: 1;
+  }
+  h3 {
+    font-size: 4rem;
+    text-align: center;
+  }
+  h4 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  #ppimg{
+    /* margin: -1rem; */
+    max-width: 20rem;
+    max-height: 20rem;
+    filter: drop-shadow(-1rem 1rem 1rem);
+    z-index: -10;
+  }
+
+  .Country_Flags {
+    gap: 0.5rem;
+    margin: -2rem 1rem 0 1rem;
+  }
+  .Country_Flags div {
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    max-height: fit-content;
+  }
+  .flag-card {
+    border-radius: 1rem;
+    max-height: fit-content;
+  }
+  .flag-card.active {
+    max-height: fit-content;
+  }
+  .flag-card.active .overlayIT {
+    opacity: 1;
+    max-height: fit-content;
+  }
+  .overlayIT{
+    inset: -11rem 0; /*is a cleaner version of top/right/bottom/left: 0*/
+    height: 30%;
+    width: 100%;
+  }
+  .flag-title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .overlayIT p {
+    display: none;
+  }
+  .Country_Flags div:hover .overlayIT {
+    opacity: 1;
+    top: -6.25rem;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .yellow-arrow {display: none;}
+
+  .welcomingIllustration {
+    padding-top: 2rem;
+  }
+  .welcomingFrase {
+    font-size: 1.5rem;
+  }
+  .welcomingIllustration img {
+    padding: 0 1rem;
+  }
+  
+  /* */
+  article {
+    margin-top: -8rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .history {
+    margin: 0rem 1rem 2rem 1rem;
+  }
+  .story {
+    display: inline-flex;
+    flex-direction: column;
+
+    background-color: var(--yellow);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 1.5rem;
+    margin-top: 4rem;
+  }
+  h6 {
+    line-height: 4rem;
+  }
+  .story_paragraph {
+    font-size: 0.8rem;
+  }
+  .pizza-cubana {
+    margin-top: 0;
+    min-width: 100%;
+  }
+
+  #processCap {
+    margin: 0 1rem 0;
+  }
+  .yellow-line-left {
+    margin-right: 1rem;
+  }
+  .yellow-line-right {
+    margin-left: 1rem;
+  }
+  h5.recipe-instructions-title {
+    font-size: 1.5rem;
+  }
+  .ingredients-C1, .ingredients-C2, .ingredients-C3 {
+    justify-items: center;
+    width: 100%;
+    margin: 0 0 4rem;
+  }
+  ul {
+    padding: 0 1rem 0 2rem;
+  }
+  ul p {
+    font-size: 14px;
+  }
+  .custom-pizza-title-wrap {
+    padding-top: 3rem;
+  }
+  h6.yourCPizza {
+    font-size: 1.25rem;
+  }
+
+  .illustration-capsule {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 2rem;
+  }
+  .instruction-1, .instruction-2, .instruction-3 {
+    justify-items: center;
+    width: 100%;
+    margin: 0 0rem 4rem;
+  }
+
+  /*  MODAL */
+  .modal-frame {
+    width: 97.5%;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .sh-Square, .v-Square, .ch-Square {
+    padding: 1rem 0.5rem 2rem;
+    gap: 1.5rem;
+    width: 90vw;
+    background: var(--yellow);
+  }
+  .tabs h2 {
+    display: block;
+  }
+
+  .sh-Tab1, .sh-Tab2, .sh-Tab3 {
+    width: 100%;
+    min-height: 3rem;
+    height: auto;
+    padding: 0.75rem;
+  }
+
+  .tab1Title, .tab2Title, .tab3Title {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  .sh-ingredients {
+    width: 90%;
+    padding: 1rem 0;
+    gap: 16px;
+  }
+  .ingredient-title {
+    font-size: 1.25rem;
+    margin: 0;
+  }
 }
